@@ -6,6 +6,7 @@ def read_text1():
     print(contents_of_file)
     quotes.close()
     checkShit(contents_of_file)
+    piratize(contents_of_file)
 
 def read_text2():
     quotes = open("/Users/arthur/Python/removeShitWords/movie_quotes copy.txt")
@@ -13,6 +14,13 @@ def read_text2():
     print(contents_of_file)
     quotes.close()
     checkShit(contents_of_file)
+    piratize(contents_of_file)
+
+def piratize(words):
+    connection = urllib.urlopen("http://isithackday.com/arrpi.php?text="+words)
+    result = connection.read()
+    print(result)
+    connection.close()
 
 def checkShit (shit):
     connection = urllib.urlopen("http://www.wdylike.appspot.com/?q="+shit)
@@ -27,3 +35,4 @@ def checkShit (shit):
 
 read_text1()
 read_text2()
+
